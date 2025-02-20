@@ -1,12 +1,13 @@
-    package foxx1001.escom.Hola_Spring.controller;
+package foxx1001.escom.Hola_Spring.Controller;
 
-    import org.springframework.web.bind.annotation.RequestMapping;
-    import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 
-    @RestController  // Indica que esta clase es un controlador REST
-    public class HolaController {
-        @RequestMapping("/Hola_Spring")  // Define la ruta base "/Hola_Spring"
-        public String decirHola() {
-            return "¡Hola Spring!";
-        }
+@Controller  // Nota: Ahora es @Controller en lugar de @RestController
+public class HolaController {
+
+    @GetMapping("/Hola_Spring")
+    public String mostrarPagina() {
+        return "hola";  // Retorna el nombre del archivo hola.html (sin .html)
     }
+}
